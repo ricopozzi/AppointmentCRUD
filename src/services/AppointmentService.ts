@@ -9,7 +9,6 @@ interface UpdateAppointment {
 export class AppointmentService  {
     async retrieveAll(): Promise<AppointmentProps[]> { 
         const result: AppointmentProps[] = await AppointmentModel.find()
-
         return result
     }
 

@@ -3,6 +3,7 @@ import { Server } from '@overnightjs/core';
 import Logger from 'jet-logger';
 import { AppointmentController } from './controllers/AppointmentController';
 import { connect } from "./utils/mongoconnect"
+import { UserController } from './controllers/UserController';
 
 export class SampleServer extends Server {
     
@@ -15,8 +16,9 @@ export class SampleServer extends Server {
 
     private setupControllers(): void {
         const appointmentController = new AppointmentController();
+        const userController = new UserController()
         super.addControllers(
-            [appointmentController],
+            [appointmentController, userController],
             
         );
         connect()
